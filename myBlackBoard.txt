@@ -45,3 +45,21 @@ public class MyClass {
       scan.close();
     }
 }
+*******************************************************************************************************************
+//Reverse_string
+
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner scan = new Scanner(System.in);
+        String myInput = scan.nextLine(); 
+
+        String[] words = myInput.split(" "); 
+
+        for (String word : words) {
+            StringBuilder reversedWord = new StringBuilder(word).reverse();
+            System.out.print(reversedWord + " ");
+        }
+    }
+}
