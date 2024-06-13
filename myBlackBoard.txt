@@ -1,0 +1,47 @@
+import java.util.Scanner; 
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+
+public class MyClass {
+    public static void main(String args[]) {
+      
+      Scanner scan = new Scanner(System.in);
+      int myInput = scan.nextInt();
+      int bolu = myInput;
+      int kalan;
+      HashMap <Integer, String> myList = new HashMap<>();
+      myList.put(10, "A");
+      myList.put(11, "B");
+      myList.put(12, "C");
+      myList.put(13, "D");
+      myList.put(14, "E");
+      myList.put(15, "F");
+      List<Object> myList2 = new ArrayList<>();
+      
+      
+      //Binary_Calculation
+      String myBinNum = Integer.toBinaryString(myInput);
+      System.out.println("My Binary Number: " + myBinNum);
+      
+      //Hexadecimal_Calculation
+      while(bolu >= 1){
+          kalan = bolu % 16;
+          bolu = bolu / 16;
+          if(kalan < 10){
+             myList2.add(kalan);
+          }else{
+             myList2.add(myList.get(kalan)); 
+          }
+      }
+      
+       String hexString = "";
+      for (Object obj : myList2) {
+          hexString += obj.toString();
+      }
+      StringBuilder myOutput = new StringBuilder(hexString);
+      myOutput.reverse();
+      System.out.println("My Hexadecimal Number: " + myOutput.toString());
+      scan.close();
+    }
+}
