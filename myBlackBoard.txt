@@ -63,3 +63,37 @@ public class MyClass {
         }
     }
 }
+*******************************************************************************************************************
+//Your_number_mountain
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String args[]) {
+        
+        Scanner scan = new Scanner(System.in);
+        int myInput = scan.nextInt(); 
+        int total =0;
+        
+        for(int i=1; i<= myInput; i++){
+            for(int y=1; y<=i; y++){
+            System.out.print(myInput);
+            }
+            System.out.println();
+        }
+        
+
+//Total_is_depend_you
+        System.out.println();
+        System.out.println("Other Example: ");
+   
+        for(int i=1; i<= myInput; i++){
+            for(int y=1; y<=i; y++){
+            System.out.print(myInput);
+            }
+            if(i != myInput)System.out.print(" + ");
+            total += Integer.parseInt(String.valueOf(myInput).repeat(i));
+        }
+         System.out.print(" = " + total);
+    }
+}
+*******************************************************************************************************************
