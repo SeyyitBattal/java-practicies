@@ -97,3 +97,36 @@ public class MyClass {
     }
 }
 *******************************************************************************************************************
+//How_much_letter_how_much_digit
+import java.util.Scanner;
+
+public class MyClass {
+    public static void main(String args[]) {
+     Scanner scan = new Scanner(System.in);
+     String myInput = scan.next();
+     int letCounter=0, digCounter=0;
+     StringBuilder myText = new StringBuilder(myInput); 
+     
+     for(int i=0; i < myText.length(); i++){
+         
+         if(Character.isLetter(myText.charAt(i))) letCounter++;
+         else digCounter++;
+         
+     }
+     System.out.println("Letter count: " + letCounter);
+     System.out.println("Digit count: " + digCounter);
+     
+     
+//Where_your_number     
+    //  char myInput = scan.next().charAt(0);
+     
+    //  if(Character.isLetter(myInput)){
+    //      System.out.println("It is letter");
+    //  }else if(Character.isDigit(myInput)){
+    //      System.out.println("It is number");
+    //  }else{
+    //      System.out.println("What is this?");
+    //  }
+    }
+}
+*******************************************************************************************************************
