@@ -128,7 +128,7 @@ public class MyClass {
     //      System.out.println("What is this?");
     //  }
     }
-}
+} 
 *******************************************************************************************************************
 import java.util.*;
 import java.util.Arrays;
@@ -148,8 +148,41 @@ public class MyClass {
      
      //Filter_odd_numbers
      List<Integer> oddNumbers = myNumbers.stream().filter(n -> n%2 != 0).collect(Collectors.toList());
-    System.out.println("Odd Numbers: " + oddNumbers);
+	 System.out.println("Odd Numbers: " + oddNumbers);
    
     }
 }
 *******************************************************************************************************************
+//How_many_times_repeat_your_numbers
+import java.util.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+        List<Integer> myNumbers1 = new ArrayList<>(Arrays.asList(-20, 40, 10, 3, 5, 6, 10, -20,-786, 2, -45, -20));
+        List<Integer> myNumbers2 = new ArrayList<>(Arrays.asList(10, 3, 5, -2, -20, 9, 8, 1, 7, -45));
+        Map<Integer, Integer> countMap = new HashMap<>();
+
+        for(int num : myNumbers2){
+            countMap.put(num, 0);
+        }
+
+        for(int num : myNumbers1){
+            if(countMap.containsKey(num)){
+                countMap.put(num, countMap.get(num) + 1);
+            }
+        }
+
+        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(countMap.entrySet());
+        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
+
+        for(Map.Entry<Integer, Integer> entry : list){
+            if(entry.getValue() == 1){
+                System.out.println("The Number: " + entry.getKey() + "; Repeat count: " + entry.getValue() + " time");
+            }
+            if(entry.getValue() > 1){
+                System.out.println("The Number: " + entry.getKey() + "; Repeat count: " + entry.getValue() + " times");
+            }
+            
+        }
+    }
+}
